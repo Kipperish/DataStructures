@@ -34,11 +34,31 @@ class LinkedList():
             self.head = newNode
         else:
             while current.getNext() != None and current.getNext().getData() < newNode.getData():
-                current = current.getNext
+                current = current.getNext()
             newNode.setNext(current.getNext())
             current.setNext(newNode)
+    def delete(self, data):
+        current = self.head
+        if current.getData() == data:
+            self.head = current.getNext()
+        else:
+            while current.getNext().getData() != data:
+                current = current.getNext()
+            current.setNext(current.getNext().getNext()) 
+            
 
 myList = LinkedList()
-myList.insertAtFront("bartholomew")
-myList.insertAtFront("tarquin")
+myList.insertInOrder("Bartholomew")
+myList.insertInOrder("Tarquin")
+myList.insertInOrder("Alfredo")
+myList.insertInOrder("Reginald")
+myList.insertInOrder("Clarence")
+myList.traverse()
+print()
+
+myList.delete("Bartholomew")
+myList.traverse()
+print()
+
+myList.delete("Tarquin")
 myList.traverse()
