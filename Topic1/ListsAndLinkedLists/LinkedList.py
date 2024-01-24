@@ -60,5 +60,9 @@ myList.delete("Bartholomew")
 myList.traverse()
 print()
 
-myList.delete("Tarquin")
+myList.insertAtFront("Wilfred")
+myList.traverse()
+print()
+
+myList.insertInOrder("Peter")
 myList.traverse()
