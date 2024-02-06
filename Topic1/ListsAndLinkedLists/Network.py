@@ -1,3 +1,5 @@
+import math
+
 class Node():
     def __init__(self, identifier):
         self.identifier = identifier
@@ -37,7 +39,12 @@ class Network():
             node2.edges.append(Edge(node1, weight))
         else:
             print("Could not find one or more of the given nodes within the network")
-
+    
+    def allEdges(self):
+        for node in self.nodes:
+            for edge in node.edges:
+                print(node.identifier, "-->", edge.nextNode.identifier, edge.weight)
+            
 network = Network()
 
 network.addNode("A")
@@ -53,9 +60,4 @@ network.addEdge("B","D", 13)
 network.addEdge("C","D", 5)
 network.addEdge("C","E", 17)
 
-def allEdges(network):
-    for node in network.nodes:
-        for edge in node.edges:
-            print(node.identifier, "-->", edge.nextNode.identifier, edge.weight)
-
-allEdges(network)
+network.allEdges()
