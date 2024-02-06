@@ -52,3 +52,10 @@ network.addEdge("A","E", 7)
 network.addEdge("B","D", 13)
 network.addEdge("C","D", 5)
 network.addEdge("C","E", 17)
+
+def allEdges(network):
+    for node in network.nodes:
+        for edge in node.edges:
+            print(node.identifier, "-->", edge.nextNode.identifier, edge.weight)
+
+allEdges(network)
