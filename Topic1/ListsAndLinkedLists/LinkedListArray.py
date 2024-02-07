@@ -15,10 +15,13 @@ def traverse(linkedList):
     if linkedList[head] == None:
         print("Empty List")
     else:
-        while current != None:
+        while linkedList[current][pointer] != None:
             print(linkedList[current][data])
             current = linkedList[current][pointer]
+    print(current)
+    return current
 
-def add(linkedList):
+def add(linkedList, item):
+
 
 traverse(linkedList)
