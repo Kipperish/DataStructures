@@ -101,10 +101,20 @@ class Network():
             for index in workingValues:
                 if index[nodeIndex] == secondNode:
                     distanceFound = index[nodeDistanceIndex]
+            path = []
+            current_node = secondNode
+            while current_node != firstNode:
+                path.append(current_node)
+                for index in workingValues:
+                    if index[nodeIndex] == current_node:
+                        current_node = index[previousNodeIndex]
+                        break
+            path.append(firstNode)
+            path.reverse()
             print(f"The shortest length between {firstNode} and {secondNode} is {distanceFound}")
+            print(" -> ".join(path))
         else:
             print(f"Could not find the shortest distance between {firstNode} and {secondNode} as one or more of the given nodes could not be found in the network")
-        print(workingValues)
             
 network = Network()
 
@@ -123,4 +133,6 @@ network.addEdge("C","E", 17)
 
 network.allEdges()
 print()
-network.shortestDistance("A", "D")
+network.shortestDistance("A", "C")
+print()
+network.shortestDistance("A", "F")
