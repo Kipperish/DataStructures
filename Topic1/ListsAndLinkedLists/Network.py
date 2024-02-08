@@ -102,12 +102,12 @@ class Network():
                 if index[nodeIndex] == secondNode:
                     distanceFound = index[nodeDistanceIndex]
             path = []
-            current_node = secondNode
-            while current_node != firstNode:
-                path.append(current_node)
+            currentNode = secondNode
+            while currentNode != firstNode:
+                path.append(currentNode)
                 for index in workingValues:
-                    if index[nodeIndex] == current_node:
-                        current_node = index[previousNodeIndex]
+                    if index[nodeIndex] == currentNode:
+                        currentNode = index[previousNodeIndex]
                         break
             path.append(firstNode)
             path.reverse()
