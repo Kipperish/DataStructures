@@ -34,21 +34,31 @@ class Stack():
         print(self.stack)
 
 carStack = Stack(6)
+
 carStack.push("Mondeo")
 carStack.printStack()
+
 carStack.push("Golf")
 carStack.printStack()
+
 print(carStack.isEmpty())
+
 carStack.push("Fiesta")
 carStack.printStack()
+
 carStack.push("Punto")
 carStack.printStack()
+
 print(carStack.pop())
 carStack.printStack()
+
 carStack.push("Civic")
 carStack.printStack()
+
 print(carStack.isFull())
+
 print(carStack.pop())
 carStack.printStack()
+
 print(carStack.pop())
 carStack.printStack()
