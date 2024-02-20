@@ -42,6 +42,7 @@ class Stack():
             popped = self.top.getData()
             self.top = self.top.getNext()
             self.length -= 1
+            print(popped)
             return popped
     def printStack(self):
         current = self.top
