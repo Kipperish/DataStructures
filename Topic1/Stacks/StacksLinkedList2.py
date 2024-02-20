@@ -44,6 +44,12 @@ class Stack():
             self.length -= 1
             print(popped)
             return popped
+    def peek(self):
+        if self.isEmpty():
+            print("Stack is empty")
+        else:
+            print(self.top.getData())
+            return self.top.getData()
     def printStack(self):
         current = self.top
         stack = []
