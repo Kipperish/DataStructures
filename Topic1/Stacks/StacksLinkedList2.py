@@ -100,6 +100,10 @@ stack.push("E")
 stack.printStack()
 print()
 
+stack.peek()
+stack.printStack()
+print()
+
 stack.push("D")
 stack.printStack()
 print()
