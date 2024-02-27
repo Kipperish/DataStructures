@@ -76,7 +76,6 @@ stack.printStack()
 print()
 
 stack.pop()
-print()
 stack.printStack()
 print()
 
