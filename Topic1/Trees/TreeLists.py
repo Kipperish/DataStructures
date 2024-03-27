@@ -22,4 +22,29 @@ def inOrderTraverse(tree, pos):
     if tree[pos][right] != -1:
         inOrderTraverse(tree, tree[pos][right])    
 
+def preOrderTraverse(tree, pos):
+    global left
+    global right
+    global data
+    print(tree[pos][data])
+    if tree[pos][left] != -1:
+        inOrderTraverse(tree, tree[pos][left])
+    if tree[pos][right] != -1:
+        inOrderTraverse(tree, tree[pos][right])
+
+def postOrderTraverse(tree,pos):
+    global left
+    global right
+    global data
+    if tree[pos][left] != -1:
+        inOrderTraverse(tree, tree[pos][left])
+    if tree[pos][right] != -1:
+        inOrderTraverse(tree, tree[pos][right])
+    print(tree[pos][data])
+
+
 inOrderTraverse(tree, 0)
+print()
+preOrderTraverse(tree,0)
+print()
+postOrderTraverse(tree,0)
