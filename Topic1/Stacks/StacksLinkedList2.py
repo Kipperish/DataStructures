@@ -14,41 +14,41 @@ class Stack():
         self.top = None
         self.size = size
         self.length = 0
-    def isEmpty(self):
+    def isEmpty(self): #checks if stack is empty
         if self.top == None:
             return True
         else:
             return False
-    def isFull(self):
+    def isFull(self): #checks if stack is full
         if self.length == self.size:
             return True
         else:
             return False
     def push(self, data):
         newNode = Node(data)
-        if self.isFull():
+        if self.isFull(): #checks if full
             print("Stack is full")
         else:
             if self.isEmpty():
-                self.top = newNode
+                self.top = newNode #adds new node to the top
             else:
-                newNode.setNext(self.top)
+                newNode.setNext(self.top) #new node points to previous top
                 self.top = newNode
             self.length += 1
     def pop(self):
-        if self.isEmpty():
+        if self.isEmpty(): #checks if empty
             print("Stack is empty")
         else:
-            popped = self.top.getData()
-            self.top = self.top.getNext()
+            popped = self.top.getData() #takes from the top of the stack
+            self.top = self.top.getNext() #next item becomes top
             self.length -= 1
             print(popped)
             return popped
     def peek(self):
-        if self.isEmpty():
+        if self.isEmpty(): #checks if empty
             print("Stack is empty")
         else:
-            print(self.top.getData())
+            print(self.top.getData()) #takes data from top
             return self.top.getData()
     def printStack(self):
         current = self.top
