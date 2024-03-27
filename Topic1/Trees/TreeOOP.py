@@ -4,7 +4,7 @@ class Node():
         self.left = None
         self.right = None
 
-class tree():
+class Tree():
     def __init__(self):
         self.root = None
 
@@ -14,7 +14,7 @@ class tree():
         else:
             return False
 
-    def addNode(self, data):
+    def add(self, data):
         newNode = Node(data)
         current = self.root
         positionFound = False
@@ -70,3 +70,20 @@ class tree():
                 if current.right != None:
                     traverse(current.right)
             traverse(self.root)
+
+tree = Tree()
+tree.add(1)
+tree.add(5)
+tree.add(21)
+tree.add(3)
+tree.add(12)
+tree.add(6)
+tree.add(18)
+tree.add(4)
+tree.add(32)
+
+tree.inOrderTraverse()
+print()
+tree.preOrderTraverse()
+print()
+tree.postOrderTraverse()
